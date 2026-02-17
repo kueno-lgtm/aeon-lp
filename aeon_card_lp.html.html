@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用途で選ぶ｜イオンの3券種を比較</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@400;600;700&display=swap');
+
+  :root {
+    --aeon-red: #c8102e;
+    --aeon-dark: #1a1a2e;
+    --aeon-mid: #2d2d4e;
+    --aeon-purple: #7b2d8b;
+    --aeon-pink: #e91e8c;
+    --accent-gold: #f5a623;
+    --bg-light: #f7f5f2;
+    --bg-white: #ffffff;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #8a8aaa;
+    --card-normal: #6b35a3;
+    --card-cinema: #e8a020;
+    --card-welcia: #1a6db5;
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --shadow-card: 0 8px 32px rgba(26,26,46,0.12);
+    --shadow-hover: 0 16px 48px rgba(26,26,46,0.22);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--aeon-dark);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  }
+  .site-header .logo {
+    font-family: 'Shippori Mincho', serif;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+  }
+  .site-header .logo span { color: var(--aeon-pink); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--aeon-dark) 0%, var(--aeon-mid) 50%, #3d1f6b 100%);
+    padding: 80px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(233,30,140,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(107,53,163,0.2) 0%, transparent 50%);
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(233,30,140,0.2);
+    border: 1px solid rgba(233,30,140,0.4);
+    color: var(--aeon-pink);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--aeon-pink);
+  }
+  .hero p {
+    color: rgba(255,255,255,0.75);
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    max-width: 520px;
+    margin: 0 auto 36px;
+    position: relative;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--aeon-pink), var(--aeon-purple));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(233,30,140,0.4);
+    letter-spacing: 0.05em;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(233,30,140,0.5);
+  }
+  .hero-cards-preview {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 48px;
+    position: relative;
+  }
+  .mini-card {
+    width: 90px;
+    height: 56px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+  }
+  .mini-card:nth-child(2) { transform: translateY(-8px); }
+  .mini-card.normal { background: linear-gradient(135deg, #6b35a3, #4a1d7a); }
+  .mini-card.cinema { background: linear-gradient(135deg, #e8a020, #c47a10); }
+  .mini-card.welcia { background: linear-gradient(135deg, #1a6db5, #0f4a7a); }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: var(--aeon-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .section-sub {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--aeon-pink), var(--aeon-purple));
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  /* ===== DIAGNOSIS ===== */
+  #diagnosis { background: var(--bg-white); }
+  .diagnosis-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .questions-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+  .question-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--bg-light);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .question-item:hover { border-color: rgba(233,30,140,0.3); }
+  .question-item.checked {
+    background: rgba(233,30,140,0.06);
+    border-color: var(--aeon-pink);
+  }
+  .q-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 1px;
+    background: #fff;
+  }
+  .question-item.checked .q-checkbox {
+    background: var(--aeon-pink);
+    border-color: var(--aeon-pink);
+  }
+  .q-checkbox svg { display: none; }
+  .question-item.checked .q-checkbox svg { display: block; }
+  .q-text { font-size: 0.98rem; color: var(--text-dark); font-weight: 500; }
+  .q-sub { font-size: 0.82rem; color: var(--text-mid); margin-top: 3px; }
+
+  /* ===== RESULT SECTION ===== */
+  #result { background: var(--bg-light); }
+  .result-placeholder {
+    text-align: center;
+    color: var(--text-light);
+    padding: 40px;
+    background: rgba(0,0,0,0.03);
+    border-radius: var(--radius-md);
+    border: 2px dashed #ddd;
+    font-size: 0.9rem;
+  }
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .card-item {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: 2px solid transparent;
+  }
+  .card-item:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+  .card-item.rank-1 {
+    border-color: var(--aeon-pink);
+    box-shadow: 0 8px 40px rgba(233,30,140,0.18);
+  }
+  .card-header {
+    padding: 24px 28px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .card-img-wrap {
+    width: 120px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-img-wrap img {
+    width: 100%;
+    height: 76px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+  }
+  .card-info { flex: 1; }
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 8px;
+  }
+  .rank-badge.gold {
+    background: linear-gradient(135deg, #f5a623, #e8820c);
+    color: #fff;
+  }
+  .rank-badge.silver {
+    background: linear-gradient(135deg, #9e9e9e, #757575);
+    color: #fff;
+  }
+  .rank-badge.bronze {
+    background: linear-gradient(135deg, #a0785a, #7d5b40);
+    color: #fff;
+  }
+  .card-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+  .card-role {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .card-body { padding: 0 28px 20px; }
+  .card-desc {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+  .card-points-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .card-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .card-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+  }
+  .card-points li::before {
+    content: '▸';
+    color: var(--aeon-pink);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .card-footer {
+    padding: 16px 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .check-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--aeon-pink);
+    cursor: pointer;
+  }
+  .check-label { font-size: 0.85rem; color: var(--text-mid); user-select: none; }
+  .btn-cta {
+    display: inline-block;
+    background: var(--aeon-dark);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 11px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .btn-cta:hover { background: var(--aeon-mid); transform: translateY(-1px); }
+  .btn-cta.btn-cta-featured {
+    background: linear-gradient(135deg, var(--aeon-pink), var(--aeon-purple));
+    box-shadow: 0 4px 16px rgba(233,30,140,0.3);
+  }
+
+  /* ===== BULK CTA ===== */
+  .bulk-cta-wrap {
+    margin-top: 36px;
+    padding: 28px;
+    background: var(--aeon-dark);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  .bulk-cta-wrap p { color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-bottom: 16px; }
+  .bulk-cta-wrap strong { color: #fff; }
+  .btn-bulk {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--aeon-pink), var(--aeon-purple));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 36px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(233,30,140,0.4);
+    letter-spacing: 0.04em;
+  }
+  .btn-bulk:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(233,30,140,0.5); }
+  .popup-warning {
+    display: none;
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--accent-gold);
+    background: rgba(245,166,35,0.15);
+    border-radius: 8px;
+    padding: 10px 16px;
+  }
+
+  /* ===== COMPARISON TABLE ===== */
+  #compare { background: var(--bg-white); }
+  .compare-table-wrap { overflow-x: auto; }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .compare-table th, .compare-table td {
+    padding: 14px 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    vertical-align: top;
+  }
+  .compare-table thead th {
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding-bottom: 16px;
+  }
+  .compare-table th.col-feature {
+    text-align: left;
+    color: var(--text-light);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    background: var(--bg-light);
+  }
+  .compare-table td:first-child {
+    text-align: left;
+    background: var(--bg-light);
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .col-normal { border-top: 3px solid var(--card-normal); }
+  .col-cinema { border-top: 3px solid var(--card-cinema); }
+  .col-welcia { border-top: 3px solid var(--card-welcia); }
+  .col-normal-bg { background: rgba(107,53,163,0.04); }
+  .col-cinema-bg { background: rgba(232,160,32,0.04); }
+  .col-welcia-bg { background: rgba(26,109,181,0.04); }
+  .tag-pill {
+    display: inline-block;
+    background: var(--bg-light);
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    margin: 2px;
+  }
+
+  /* Mobile table stacking */
+  @media (max-width: 640px) {
+    .compare-table { display: block; }
+    .compare-table thead { display: none; }
+    .compare-table tbody, .compare-table tr, .compare-table td { display: block; width: 100%; }
+    .compare-table tr { margin-bottom: 24px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); }
+    .compare-table td:first-child { font-size: 0.78rem; padding: 8px 16px; }
+    .compare-table td { padding: 10px 16px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .compare-table td[data-label]::before {
+      content: attr(data-label) ' ';
+      font-weight: 700;
+      color: var(--text-light);
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ===== FAQ ===== */
+  #faq { background: var(--bg-light); }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    gap: 16px;
+    user-select: none;
+  }
+  .faq-q::after {
+    content: '＋';
+    font-size: 1.2rem;
+    color: var(--aeon-pink);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .faq-a-inner {
+    padding: 0 24px 20px;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ===== DISCLAIMER ===== */
+  #disclaimer {
+    background: var(--aeon-dark);
+    color: rgba(255,255,255,0.55);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  #disclaimer a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+  #disclaimer p { max-width: 680px; margin: 0 auto 8px; }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 640px) {
+    .hero { padding: 60px 20px 56px; }
+    .card-header { flex-direction: column; }
+    .card-img-wrap { width: 100%; }
+    .card-img-wrap img { height: 120px; }
+    .card-footer { flex-direction: column; align-items: flex-start; }
+    .btn-cta { width: 100%; text-align: center; padding: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">イオンカード<span>｜</span>3券種くらべ</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">CARD COMPARISON</div>
+  <h1>用途で選ぶ｜<br>イオンの<em>3券種</em>を比較</h1>
+  <p>映画・日用品・普段使い。あなたに合う順に並び替えます。</p>
+  <a href="#diagnosis" class="btn-primary">10秒で診断する ▼</a>
+  <div class="hero-cards-preview">
+    <div class="mini-card normal">ÆON<br>通常</div>
+    <div class="mini-card cinema">Minions<br>シネマ</div>
+    <div class="mini-card welcia">welcia<br>ウエルシア</div>
+  </div>
+</section>
+
+<!-- DIAGNOSIS -->
+<section id="diagnosis">
+  <div class="diagnosis-inner">
+    <div class="divider"></div>
+    <div class="section-label">STEP 1</div>
+    <h2 class="section-title">10秒診断</h2>
+    <p class="section-sub">あてはまる項目にチェックを入れてください（複数可）</p>
+
+    <div class="questions-list" id="questionsList">
+      <div class="question-item" data-q="q1" onclick="toggleQ(this)">
+        <div class="q-checkbox">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7L5.5 10.5L12 3.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="q-text">🎬 映画をお得に楽しみたい</div>
+          <div class="q-sub">イオンシネマを利用する機会がある</div>
+        </div>
+      </div>
+      <div class="question-item" data-q="q2" onclick="toggleQ(this)">
+        <div class="q-checkbox">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7L5.5 10.5L12 3.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="q-text">💊 日用品・薬局でよく買い物する</div>
+          <div class="q-sub">ウエルシアが生活圏内にある</div>
+        </div>
+      </div>
+      <div class="question-item" data-q="q3" onclick="toggleQ(this)">
+        <div class="q-checkbox">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7L5.5 10.5L12 3.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="q-text">🛒 イオン・まいばすけっとが生活圏</div>
+          <div class="q-sub">イオン系列のスーパーや商業施設をよく利用する</div>
+        </div>
+      </div>
+      <div class="question-item" data-q="q4" onclick="toggleQ(this)">
+        <div class="q-checkbox">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7L5.5 10.5L12 3.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="q-text">📱 電子マネー（WAON）をよく使う</div>
+          <div class="q-sub">タッチ決済・電子マネーを活用したい</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <button class="btn-primary" onclick="showResult()">おすすめを表示 →</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section id="result" class="section">
+  <div class="divider"></div>
+  <div class="section-label">STEP 2</div>
+  <h2 class="section-title">あなたへのおすすめ順</h2>
+  <p class="section-sub">回答内容をもとに、用途マッチ度が高い順に並び替えました。</p>
+
+  <div id="resultContent">
+    <div class="result-placeholder">診断を完了すると、おすすめ順でカードが表示されます。</div>
+  </div>
+
+  <div class="bulk-cta-wrap" id="bulkCtaWrap" style="display:none">
+    <p><strong>複数のカードを検討している方へ</strong><br>チェックしたカードの公式ページをまとめて開きます。</p>
+    <button class="btn-bulk" onclick="openChecked()">まとめて公式を見る ↗</button>
+    <div class="popup-warning" id="popupWarning">
+      ⚠️ ポップアップがブロックされた可能性があります。ブラウザの設定でポップアップを許可するか、各カードの「公式で詳細を見る」ボタンから個別にご確認ください。
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section id="compare">
+  <div class="section">
+    <div class="divider"></div>
+    <div class="section-label">COMPARISON</div>
+    <h2 class="section-title">3券種かんたん比較表</h2>
+    <p class="section-sub">用途・特徴・向いている人で比較しています（定性的な参考情報です）</p>
+
+    <div class="compare-table-wrap fade-in">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="col-feature">項目</th>
+            <th class="col-normal">
+              <div style="color:var(--card-normal);font-size:0.78rem;margin-bottom:4px">MAIN CARD</div>
+              イオンカード<br><small style="font-weight:400">WAON一体型</small>
+            </th>
+            <th class="col-cinema">
+              <div style="color:var(--card-cinema);font-size:0.78rem;margin-bottom:4px">SUB CARD</div>
+              イオンカード<br><small style="font-weight:400">ミニオンズ</small>
+            </th>
+            <th class="col-welcia">
+              <div style="color:var(--card-welcia);font-size:0.78rem;margin-bottom:4px">SPECIFIC CARD</div>
+              ウエルシアカード
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>主な用途</td>
+            <td class="col-normal-bg" data-label="通常カード">普段の買い物・日常利用全般</td>
+            <td class="col-cinema-bg" data-label="シネマカード">映画・娯楽・エンタメ用</td>
+            <td class="col-welcia-bg" data-label="ウエルシアカード">薬局・日用品・ヘルスケア用</td>
+          </tr>
+          <tr>
+            <td>電子マネー</td>
+            <td class="col-normal-bg">WAON一体型</td>
+            <td class="col-cinema-bg">—</td>
+            <td class="col-welcia-bg">—</td>
+          </tr>
+          <tr>
+            <td>特徴的な利用先</td>
+            <td class="col-normal-bg">イオン・まいばすけっと・各種加盟店</td>
+            <td class="col-cinema-bg">イオンシネマ・エンタメ関連施設</td>
+            <td class="col-welcia-bg">ウエルシア・ドラッグストア系列</td>
+          </tr>
+          <tr>
+            <td>向いている人</td>
+            <td class="col-normal-bg">
+              <span class="tag-pill">普段使いメイン</span>
+              <span class="tag-pill">イオン生活圏</span>
+              <span class="tag-pill">WAON派</span>
+            </td>
+            <td class="col-cinema-bg">
+              <span class="tag-pill">映画好き</span>
+              <span class="tag-pill">週末エンタメ派</span>
+              <span class="tag-pill">サブカード希望</span>
+            </td>
+            <td class="col-welcia-bg">
+              <span class="tag-pill">薬局頻用</span>
+              <span class="tag-pill">日用品まとめ買い</span>
+              <span class="tag-pill">健康意識高め</span>
+            </td>
+          </tr>
+          <tr>
+            <td>複数枚持ちの相性</td>
+            <td class="col-normal-bg">メインカードとして◎</td>
+            <td class="col-cinema-bg">通常との併用が合いやすい</td>
+            <td class="col-welcia-bg">通常との2枚持ちで使い分けやすい</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="divider"></div>
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">よくある質問</h2>
+  <p class="section-sub">カード選びでよく迷う点をまとめました。</p>
+
+  <div class="faq-list fade-in">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">どのカードを選べばいいですか？</div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          ライフスタイルによって向き・不向きが異なります。イオン系列をよく使う方は通常カード、映画やエンタメを楽しむ方はシネマカード、ウエルシアで日用品を頻繁に購入する方はウエルシアカードが検討しやすいとされています。上の診断でおおよその目安をご確認ください。最終的な判断は公式ページでご確認いただくことをおすすめします。
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">2枚・3枚持ちはどうですか？</div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          用途が明確に分かれている場合、複数枚を使い分けるスタイルもあります。たとえば「日常の買い物は通常カード、映画のときはシネマカード」のように場面で切り替えると管理しやすいという考え方もあります。ただし、カードの管理が増えるため、ご自身のライフスタイルに合う枚数をご検討ください。
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">特典や条件は変わることがありますか？</div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          はい、各カードの特典・ポイント還元率・サービス内容は変更される場合があります。このページの情報は参考情報として提供しており、最新かつ正確な条件は必ず各カードの公式ページでご確認ください。
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">WAONとカードの関係を教えてください</div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          イオンカード（通常/WAON一体型）は、クレジットカードと電子マネーWAONが1枚に収まっています。WAONはイオン系列の店舗を中心に利用でき、チャージして使うプリペイド型の電子マネーです。詳細は公式ページでご確認ください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section id="disclaimer">
+  <p>【免責事項・ご注意】</p>
+  <p>本ページは参考情報の提供を目的としており、各カードの申込を推奨・保証するものではありません。掲載している特典・サービス内容・条件は変更される場合があります。最新の情報は必ず各カードの公式ページをご確認ください。カードのお申込みにあたっては公式サイトの記載内容および申込条件を十分にご確認ください。</p>
+  <p style="margin-top:12px;font-size:0.72rem;opacity:0.6">※当ページはアフィリエイト広告を含む場合があります。</p>
+</section>
+
+<script>
+// ===== CARD DATA =====
+const CARDS = {
+  normal: {
+    id: 'normal',
+    name: 'イオンカード（WAON一体型）',
+    role: 'MAIN CARD ｜ Daily Driver',
+    colorClass: 'col-normal',
+    accentColor: '#6b35a3',
+    imgSrc: 'https://placehold.co/240x152/6b35a3/white?text=AEON+Card',
+    imgAlt: 'イオンカード（WAON一体型）券面イメージ（仮）',
+    desc: 'イオン・まいばすけっとなど系列店での日常的なお買い物に向いているカードです。WAONの電子マネー機能も一体型となっており、普段使いのメインカードとして検討しやすい一枚です。',
+    points: ['イオン系列店でよく買い物する方', 'WAON電子マネーを活用したい方', '1枚で日常をまとめたい方'],
+    link: 'https://www.aeon.co.jp/campaign/lp/aeoncardwaon/?dpd=30001&cm=300029&agr=22000052&ad=23004273'
+  },
+  cinema: {
+    id: 'cinema',
+    name: 'イオンカード（ミニオンズ）',
+    role: 'SUB CARD ｜ Entertainment',
+    colorClass: 'col-cinema',
+    accentColor: '#e8a020',
+    imgSrc: 'https://placehold.co/240x152/e8a020/white?text=Minions+Card',
+    imgAlt: 'イオンカード（ミニオンズ）券面イメージ（仮）',
+    desc: 'イオンシネマでの映画鑑賞や、娯楽・エンタメを楽しむ機会が多い方に向いているカードです。かわいいミニオンズデザインで、週末や休日を楽しみたい方のサブカードとして検討されることが多い一枚です。',
+    points: ['映画をよく見る方・イオンシネマを利用する方', 'エンタメ・娯楽用にサブカードを持ちたい方', '個性的なカードデザインが気になる方'],
+    link: 'https://www.aeon.co.jp/campaign/lp/minions/?dpd=30001&cmp=300029&agr=22000052&ad=23004309'
+  },
+  welcia: {
+    id: 'welcia',
+    name: 'イオンカード（ウエルシア）',
+    role: 'SPECIFIC CARD ｜ Health & Essentials',
+    colorClass: 'col-welcia',
+    accentColor: '#1a6db5',
+    imgSrc: 'https://placehold.co/240x152/1a6db5/white?text=Welcia+Card',
+    imgAlt: 'イオンカード（ウエルシア）券面イメージ（仮）',
+    desc: 'ウエルシアをはじめとするドラッグストアや薬局での日用品・ヘルスケア用品の購入機会が多い方に向いているカードです。薬局での買い物が生活の一部になっている方のご参考になりそうな一枚です。',
+    points: ['ウエルシアや薬局をよく利用する方', '日用品・消耗品をまとめ買いする方', '健康・美容関連の購入が多い方'],
+    link: 'https://www.aeon.co.jp/card/lp/welciacard/?dpd=30001&cmp=300029&agr=22000052&ad=23005359'
+  }
+};
+
+// ===== TOGGLE QUESTION =====
+function toggleQ(el) {
+  el.classList.toggle('checked');
+}
+
+// ===== SCORING =====
+function calcScores() {
+  const checked = {};
+  document.querySelectorAll('.question-item.checked').forEach(el => {
+    checked[el.dataset.q] = true;
+  });
+
+  const scores = { normal: 0, cinema: 0, welcia: 0 };
+  if (checked.q1) scores.cinema += 3;
+  if (checked.q2) scores.welcia += 3;
+  if (checked.q3) scores.normal += 3;
+  if (checked.q4) scores.normal += 2;
+
+  // Sort with tiebreaker: normal > cinema > welcia
+  const order = ['normal', 'cinema', 'welcia'];
+  const sorted = order.sort((a, b) => {
+    if (scores[b] !== scores[a]) return scores[b] - scores[a];
+    return order.indexOf(a) - order.indexOf(b);
+  });
+
+  return sorted;
+}
+
+// ===== RENDER RESULT =====
+function showResult() {
+  const sorted = calcScores();
+  const container = document.getElementById('resultContent');
+  const bulkWrap = document.getElementById('bulkCtaWrap');
+
+  const rankLabels = ['gold', 'silver', 'bronze'];
+  const rankNames = ['1位のおすすめ', '2位', '3位'];
+  const rankIcons = ['🥇', '🥈', '🥉'];
+
+  let html = '<div class="cards-grid">';
+
+  sorted.forEach((cardId, i) => {
+    const c = CARDS[cardId];
+    const isFeatured = i === 0;
+    const defaultChecked = i < 2;
+
+    html += `
+    <div class="card-item ${isFeatured ? 'rank-1' : ''}" id="card-${cardId}">
+      <div class="card-header">
+        <div class="card-img-wrap">
+          <img src="${c.imgSrc}" alt="${c.imgAlt}" loading="lazy">
+          <!-- ↑ 公式画像に差し替えてください -->
+        </div>
+        <div class="card-info">
+          <div class="rank-badge ${rankLabels[i]}">${rankIcons[i]} ${rankNames[i]}</div>
+          <div class="card-name">${c.name}</div>
+          <div class="card-role">${c.role}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">${c.desc}</p>
+        <div class="card-points-title">こんな方に向いています</div>
+        <ul class="card-points">
+          ${c.points.map(p => `<li>${p}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="card-footer">
+        <label class="check-row">
+          <input type="checkbox" id="chk-${cardId}" ${defaultChecked ? 'checked' : ''} onchange="updateBulkBtn()">
+          <span class="check-label">このカードも検討に入れる</span>
+        </label>
+        <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="btn-cta ${isFeatured ? 'btn-cta-featured' : ''}">公式で詳細を見る ↗</a>
+      </div>
+    </div>`;
+  });
+
+  html += '</div>';
+  container.innerHTML = html;
+  bulkWrap.style.display = 'block';
+  updateBulkBtn();
+
+  // Smooth scroll to result
+  setTimeout(() => {
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// ===== BULK OPEN =====
+function updateBulkBtn() {}
+
+function openChecked() {
+  const order = ['normal', 'cinema', 'welcia'];
+  const toOpen = order.filter(id => {
+    const chk = document.getElementById('chk-' + id);
+    return chk && chk.checked;
+  });
+
+  if (toOpen.length === 0) {
+    alert('検討に入れるカードを選択してください。');
+    return;
+  }
+
+  let blocked = false;
+  toOpen.forEach((id, i) => {
+    const win = window.open(CARDS[id].link, '_blank', 'noopener,noreferrer');
+    if (!win) blocked = true;
+  });
+
+  if (blocked) {
+    document.getElementById('popupWarning').style.display = 'block';
+  }
+}
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(fi => {
+    fi.classList.remove('open');
+    fi.querySelector('.faq-a').style.maxHeight = '0';
+  });
+
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// ===== SCROLL ANIMATION =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
