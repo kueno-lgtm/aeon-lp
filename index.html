@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -138,7 +139,6 @@
     }
     .section-sub{color:var(--text-mid);font-size:.96rem;margin-bottom:30px}
 
-    /* ===== 3 cards side-by-side ===== */
     .cards-grid{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -175,7 +175,7 @@
     .card-name{font-size:1.03rem;font-weight:800;line-height:1.45}
     .card-copy{
       color:var(--text-mid);font-size:.9rem;line-height:1.62;
-      min-height:72px;
+      min-height:88px;
     }
 
     .usage-box{
@@ -211,7 +211,6 @@
       box-shadow:0 4px 14px rgba(233,30,140,.28);
     }
 
-    /* ===== bulk cta ===== */
     .bundle-wrap{
       background:var(--aeon-dark);
       border-radius:var(--radius-lg);
@@ -305,6 +304,7 @@
       .hero{padding:58px 16px 50px}
       .cards-grid{grid-template-columns:1fr}
       .card-media img{height:175px}
+      .card-copy{min-height:auto}
     }
   </style>
 </head>
@@ -316,18 +316,16 @@
 
 <section class="hero">
   <div class="hero-eyebrow">3 CARDS BUNDLE</div>
-<h1>1枚で迷うより、<br><em>3枚を使い分ける</em>ほうがムダなくお得。</h1>
-<p>日常の買い物・映画・薬局の支払いをそれぞれ得意なカードに分けるだけ。<br>「いつもの出費」をそのまま、効率よくポイント活用につなげられます。</p>
+  <h1>1枚で迷うより、<br><em>3枚を使い分ける</em>ほうがムダなくお得。</h1>
+  <p>日常の買い物・映画・薬局の支払いをそれぞれ得意なカードに分けるだけ。<br>「いつもの出費」をそのまま、効率よくポイント活用につなげられます。</p>
 
   <div class="hero-benefits">
-<div class="pill">🛒 日常の支払いを最適化</div>
-<div class="pill">🎬 映画の出費をお得に</div>
-<div class="pill">💊 薬局・日用品でポイント活用</div>
-
+    <div class="pill">🛒 日常の支払いを最適化</div>
+    <div class="pill">🎬 映画の出費をお得に</div>
+    <div class="pill">💊 薬局・日用品でポイント活用</div>
   </div>
 
-<a href="#cards" class="btn-primary">3券種をまとめてチェックする ▼</a>
-
+  <a href="#cards" class="btn-primary">3券種をまとめてチェックする ▼</a>
 
   <div class="hero-cards-preview">
     <div class="mini-card normal">ÆON<br>通常</div>
@@ -339,9 +337,8 @@
 <section id="cards" class="section">
   <div class="divider"></div>
   <div class="section-label">3 CARDS / SIDE BY SIDE</div>
-<h2 class="section-title">あなたの生活費に合わせて、3券種を横並びで比較</h2>
-<p class="section-sub">「どれか1枚」ではなく「使う場所で分ける」がポイント。最初から3枚を見比べて、必要なものだけ選べます。</p>
-
+  <h2 class="section-title">あなたの生活費に合わせて、3券種を横並びで比較</h2>
+  <p class="section-sub">「どれか1枚」ではなく「使う場所で分ける」がポイント。最初から3枚を見比べて、必要なものだけ選べます。</p>
 
   <div class="cards-grid">
     <!-- NORMAL -->
@@ -352,17 +349,17 @@
       </div>
       <div class="card-content">
         <h3 class="card-name">イオンカード（WAON一体型）</h3>
-        <p class="card-copy">普段使いのメインカード。日常の買い物とWAON利用を1枚でカバーしやすい設計。</p>
+        <p class="card-copy">毎日の買い物を1枚にまとめやすいメインカード。普段の決済をここに寄せることで、家計管理がシンプルになり、ポイントの取りこぼしも防ぎやすくなります。</p>
         <div class="usage-box">
-          <div class="usage-title">主な役割</div>
-          <div class="usage-text">普段使いのクレジットカード</div>
+          <div class="usage-title">このカードで得しやすい場面</div>
+          <div class="usage-text">普段の買い物・固定的な日常決済をまとめるとき</div>
         </div>
         <div class="card-footer">
           <label class="check-row">
             <input type="checkbox" id="chk-normal" checked onchange="toggleSelected('normal')">
-            まとめ申し込み対象に含める
+            このカードをまとめ申込に含める
           </label>
-          <a class="btn-cta featured" href="https://www.aeon.co.jp/campaign/lp/aeoncardwaon/?dpd=30001&cm=300029&agr=22000052&ad=23004273" target="_blank" rel="noopener noreferrer">公式で詳細を見る ↗</a>
+          <a class="btn-cta featured" href="https://www.aeon.co.jp/campaign/lp/aeoncardwaon/?dpd=30001&cm=300029&agr=22000052&ad=23004273" target="_blank" rel="noopener noreferrer">公式で申し込み内容を見る ↗</a>
         </div>
       </div>
     </article>
@@ -375,17 +372,17 @@
       </div>
       <div class="card-content">
         <h3 class="card-name">イオンカード（ミニオンズ）</h3>
-        <p class="card-copy">週末・レジャー用途のサブカード。映画などエンタメ導線に相性のよい1枚。</p>
+        <p class="card-copy">映画やレジャーの支払いを切り分けるサブカード。娯楽費を分けて管理しやすくなり、週末の出費を“使って終わり”にしない運用がしやすくなります。</p>
         <div class="usage-box">
-          <div class="usage-title">主な役割</div>
-          <div class="usage-text">サブカードとして映画がお得に活用しやすい</div>
+          <div class="usage-title">このカードで得しやすい場面</div>
+          <div class="usage-text">映画・休日レジャーの支払いをまとめるとき</div>
         </div>
         <div class="card-footer">
           <label class="check-row">
             <input type="checkbox" id="chk-cinema" checked onchange="toggleSelected('cinema')">
-            まとめ申し込み対象に含める
+            このカードをまとめ申込に含める
           </label>
-          <a class="btn-cta" href="https://www.aeon.co.jp/campaign/lp/minions/?dpd=30001&cmp=300029&agr=22000052&ad=23004309" target="_blank" rel="noopener noreferrer">公式で詳細を見る ↗</a>
+          <a class="btn-cta" href="https://www.aeon.co.jp/campaign/lp/minions/?dpd=30001&cmp=300029&agr=22000052&ad=23004309" target="_blank" rel="noopener noreferrer">公式で申し込み内容を見る ↗</a>
         </div>
       </div>
     </article>
@@ -398,17 +395,17 @@
       </div>
       <div class="card-content">
         <h3 class="card-name">ウエルシアカード</h3>
-        <p class="card-copy">薬局・日用品の高頻度利用に特化。消耗品の買い物を効率的に回しやすい1枚。</p>
+        <p class="card-copy">薬局・日用品などの高頻度支出に強い1枚。毎月ほぼ必ず発生する消耗品コストを、効率よくポイント活用につなげやすくなります。</p>
         <div class="usage-box">
-          <div class="usage-title">主な役割</div>
-          <div class="usage-text">ウエルシアでポイント活用を狙う用途</div>
+          <div class="usage-title">このカードで得しやすい場面</div>
+          <div class="usage-text">薬局・日用品・ヘルスケア支出が多いとき</div>
         </div>
         <div class="card-footer">
           <label class="check-row">
             <input type="checkbox" id="chk-welcia" checked onchange="toggleSelected('welcia')">
-            まとめ申し込み対象に含める
+            このカードをまとめ申込に含める
           </label>
-          <a class="btn-cta" href="https://www.aeon.co.jp/card/lp/welciacard/?dpd=30001&cmp=300029&agr=22000052&ad=23005359" target="_blank" rel="noopener noreferrer">公式で詳細を見る ↗</a>
+          <a class="btn-cta" href="https://www.aeon.co.jp/card/lp/welciacard/?dpd=30001&cmp=300029&agr=22000052&ad=23005359" target="_blank" rel="noopener noreferrer">公式で申し込み内容を見る ↗</a>
         </div>
       </div>
     </article>
@@ -416,10 +413,10 @@
 
   <div class="bundle-wrap">
     <div class="bundle-kicker">BUNDLE CTA</div>
-    <div class="bundle-title">3券種を一気に申し込んで、用途別にお得を取りこぼさない</div>
-    <div class="bundle-sub">3枚をまとめて開いて、そのまま申し込み手続きを進められます。</div>
-    <button class="btn-primary" onclick="openChecked()">3券種をまとめて申し込む ↗</button>
-    <p class="bundle-note">※ 「普段使い」「映画・レジャー」「日用品」の3軸で分けて持つ前提の導線です。<br>最新条件・特典は必ず各公式ページをご確認ください。</p>
+    <div class="bundle-title">3券種をまとめて申し込んで、生活費の支払い先を最初から最適化</div>
+    <div class="bundle-sub">あとで追加するより、最初に必要分をそろえる方が手間も管理コストも減らせます。</div>
+    <button class="btn-primary" onclick="openChecked()">選択したカードをまとめて申し込む ↗</button>
+    <p class="bundle-note">※ 不要なカードはチェックを外してOK。あなたの生活スタイルに合わせて調整できます。<br>※ 最新の特典・条件・注意事項は各公式ページで必ずご確認ください。</p>
     <div class="popup-warning" id="popupWarning">
       ⚠️ ポップアップがブロックされた可能性があります。ブラウザ設定で許可するか、各カードの「公式で詳細を見る」から個別にご確認ください。
     </div>
@@ -431,7 +428,7 @@
     <div class="divider"></div>
     <div class="section-label">COMPARISON</div>
     <h2 class="section-title">3券種かんたん比較表</h2>
-    <p class="section-sub">「3券種をまとめて申し込んで使い分ける」前提で要点を整理しています。</p>
+    <p class="section-sub">「3券種をまとめて申し込んで使い分ける」前提で、ユーザーメリットを整理しています。</p>
 
     <div class="compare-table-wrap">
       <table class="compare-table">
@@ -445,34 +442,34 @@
         </thead>
         <tbody>
           <tr>
-            <td>主な用途</td>
-            <td class="col-normal-bg">普段の買い物・日常決済</td>
-            <td class="col-cinema-bg">映画・週末エンタメ</td>
-            <td class="col-welcia-bg">薬局・日用品・ヘルスケア</td>
+            <td>このカードの役割</td>
+            <td class="col-normal-bg">毎日の支払いの中心にする</td>
+            <td class="col-cinema-bg">映画・レジャー費を分けて管理する</td>
+            <td class="col-welcia-bg">薬局・日用品の固定支出を最適化する</td>
           </tr>
           <tr>
-            <td>導入イメージ</td>
-            <td class="col-normal-bg">メイン決済の軸</td>
-            <td class="col-cinema-bg">休日用途のサブ軸</td>
-            <td class="col-welcia-bg">高頻度消耗品の特化軸</td>
+            <td>使い分けメリット</td>
+            <td class="col-normal-bg">家計のベースを安定化しやすい</td>
+            <td class="col-cinema-bg">娯楽費の使いすぎを把握しやすい</td>
+            <td class="col-welcia-bg">毎月の消耗品コストで活用しやすい</td>
           </tr>
           <tr>
-            <td>3枚持ちの狙い</td>
-            <td class="col-normal-bg" colspan="3">利用シーン別に分けることで、取りこぼしなく活用しやすくする</td>
+            <td>3枚持ちのメリット</td>
+            <td class="col-normal-bg" colspan="3">支払い先を用途別に分けることで、ポイント活用と家計管理を両立しやすい</td>
           </tr>
           <tr>
             <td>向いている人</td>
             <td class="col-normal-bg">
               <span class="tag-pill">普段使い中心</span>
-              <span class="tag-pill">イオン生活圏</span>
+              <span class="tag-pill">家計管理を簡単にしたい</span>
             </td>
             <td class="col-cinema-bg">
               <span class="tag-pill">映画好き</span>
-              <span class="tag-pill">週末レジャー</span>
+              <span class="tag-pill">休日支出を分けたい</span>
             </td>
             <td class="col-welcia-bg">
               <span class="tag-pill">薬局利用が多い</span>
-              <span class="tag-pill">日用品購入が多い</span>
+              <span class="tag-pill">日用品費を最適化したい</span>
             </td>
           </tr>
         </tbody>
@@ -489,26 +486,28 @@
 
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">なぜ3券種をまとめて申し込む前提なのですか？</div>
+      <div class="faq-q" onclick="toggleFaq(this)">3枚だと管理が大変ではないですか？</div>
       <div class="faq-a">
         <div class="faq-a-inner">
-          本ページは「普段使い・映画・日用品」の3用途でカードを使い分ける導線を前提に設計しています。用途別にカードを分けることで、生活シーンごとの活用を整理しやすくする狙いです。
+          用途ごとに固定すると、むしろ明細が見やすくなります。日常・娯楽・薬局で役割を分けるだけなので、管理がシンプルになります。
         </div>
       </div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">3枚同時に申し込むと審査や条件はどうなりますか？</div>
+      <div class="faq-q" onclick="toggleFaq(this)">最初から3枚全部必要ですか？</div>
       <div class="faq-a">
         <div class="faq-a-inner">
-          審査・申込条件・特典内容は各公式ページの案内が基準です。本ページは参考導線のため、必ず各カードの最新情報をご確認ください。
+          必須ではありません。不要なカードはチェックを外して個別に申し込みできます。まずは利用頻度の高い支出から優先するのがおすすめです。
         </div>
       </div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">1枚だけ先に申し込むこともできますか？</div>
+      <div class="faq-q" onclick="toggleFaq(this)">結局どれから申し込めばいいですか？</div>
       <div class="faq-a">
         <div class="faq-a-inner">
-          可能です。各カードの「公式で詳細を見る」から個別に申し込みできます。まとめ申込ボタンは、選択したカードだけを一括で開く仕組みです。
+          迷ったら「毎月必ず使う支出」から優先してください。普段使い（メイン）＋薬局（日用品）＋映画（娯楽）の順で考えると選びやすいです。
         </div>
       </div>
     </div>
@@ -578,3 +577,4 @@
 </script>
 </body>
 </html>
+```
